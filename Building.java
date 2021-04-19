@@ -60,20 +60,24 @@ public class Building {
                 ", build in " + getBuildIn() + ", owner " + getOwner() + "]";
     }
 
-    public void open() {
-        System.console().printf("%s opened%n", getClass().getName());
+    public void open()
+    {
+        System.out.println("Opened: " + getClass().getName());
     }
 
-    public void owner(){
+    public void owner()
+    {
         System.console().printf("Owner: " + getOwner());
     }
 
-    public void buildIn(){
+    public void buildIn()
+    {
         System.console().printf("Build in: " + getBuildIn());
     }
 
-    public void close() {
-        System.out.println(getClass().getName() + " closed");
+    public void close()
+    {
+        System.out.println(getClass().getName() + " is closed");
     }
 
 
