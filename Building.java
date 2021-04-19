@@ -61,7 +61,7 @@ public class Building {
 
     public void open()
     {
-        System.out.println("Opened: " + getClass().getName());
+        System.out.println("Opened: " + getClass().getSimpleName());
     }
 
     public void owner()
@@ -76,7 +76,7 @@ public class Building {
 
     public void close()
     {
-        System.out.println(getClass().getName() + " is closed");
+        System.out.println(getClass().getSimpleName() + " is closed");
     }
 
 
