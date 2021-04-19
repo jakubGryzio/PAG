@@ -50,12 +50,6 @@ public class Hospital extends Building{
         return this.bedNumber - this.patientNumber;
     }
 
-    public void addBed() {
-        if (checkEmptyBedNumber() < 0) {
-            this.bedNumber += -checkEmptyBedNumber();
-        }
-    }
-
     public void addBed(int beds) {
         this.bedNumber += beds;
     }
