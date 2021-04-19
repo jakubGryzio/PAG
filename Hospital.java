@@ -1,5 +1,3 @@
-package com.learning.main;
-
 import java.util.Objects;
 
 public class Hospital extends Building{
