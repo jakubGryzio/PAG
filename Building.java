@@ -2,9 +2,9 @@ import java.util.Objects;
 
 public class Building {
     private String material = "concrete";
-    private double height = 100.0;
-    private double length = 25.7;
-    private double width = 35.5;
+    private double height = 0.0;
+    private double length = 0.0;
+    private double width = 0.0;
     private int buildIn = 1990;
     private String owner = "Jacek Kurski";
     private boolean rebuild = false;
