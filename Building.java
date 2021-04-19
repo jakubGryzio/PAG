@@ -9,6 +9,18 @@ public class Building {
     private String owner = "Jacek Kurski";
     private boolean rebuild = false;
 
+    public Building() {
+    }
+
+    public Building(String material, double height, double length, double width, int buildIn, String owner, boolean rebuild) {
+        this.material = material;
+        this.height = height;
+        this.length = length;
+        this.width = width;
+        this.buildIn = buildIn;
+        this.owner = owner;
+        this.rebuild = rebuild;
+    }
 
     public void setMaterial(String material) {
         this.material = material;
@@ -54,29 +66,29 @@ public class Building {
     }
 
     public String toString() {
-        return "[" + getClass().getName() + ", made of " + getMaterial() +
+        return "[" + getClass().getSimpleName() + ", made of " + getMaterial() +
                 ", size[m]=" + getLength() + "x" + getHeight() + "x" + getWidth() +
                 ", build in " + getBuildIn() + ", owner " + getOwner() + "]";
     }
 
     public void open()
     {
-        System.out.println("Opened: " + getClass().getSimpleName());
+        System.out.println("Opened " + getClass().getSimpleName());
     }
 
     public void owner()
     {
-        System.console().printf("Owner: " + getOwner());
+        System.out.println("Owner: " + this.getOwner());
     }
 
     public void buildIn()
     {
-        System.console().printf("Build in: " + getBuildIn());
+        System.out.println("Build in: " + this.getBuildIn());
     }
 
     public void close()
     {
-        System.out.println(getClass().getSimpleName() + " is closed");
+        System.out.println(getClass().getSimpleName() + " closed");
     }
 
 
@@ -95,4 +107,3 @@ public class Building {
         return Objects.hash(material, height, length, width, buildIn, owner, rebuild);
     }
 }
-
