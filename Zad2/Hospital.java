@@ -5,6 +5,7 @@
 
 */
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Hospital extends Building{
         private String name;
@@ -93,5 +94,45 @@ public class Hospital extends Building{
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), name, bedNumber, patientNumber);
+    }
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Hospital hospital = new Hospital("concrete", 60.0, 100.0, 80.0, 2010, "Adam Niedzielski", false,
+                                    "public", 20, 150);
+        hospital.open();
+        hospital.owner();
+        System.out.println(hospital);
+
+        System.out.println("How many are new COVID patients?");
+        int numberNewPatient = scanner.nextInt();
+        for (int i = 0; i < numberNewPatient; i++) {
+        hospital.addPatient();
+        }
+        System.out.println(hospital);
+
+        hospital.checkEmptyBedNumber();
+        hospital.addBed(100);
+
+        System.out.println("How many patients have recovered?");
+        int numberRecoveredPatient = scanner.nextInt();
+        for (int i = 0; i < numberRecoveredPatient; i++) {
+        hospital.dischargePatient();
+        }
+        System.out.println(hospital);
+
+        hospital.close();
+
+
+        Hospital hospital2 = new Hospital("concrete", 60.0, 100.0, 80.0, 2010, "Adam Niedzielski", false,
+            "private", 20, 150);
+
+        System.out.println(hospital.equals(hospital2));
+
+        if (hospital.hashCode() != hospital2.hashCode()){
+        System.out.println(true);
+        } else {
+        System.out.println("hashCode does not work!");
+        }
     }
 } 
