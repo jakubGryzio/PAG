@@ -106,4 +106,4 @@ public class Building {
     public int hashCode() {
         return Objects.hash(material, height, length, width, buildIn, owner, rebuild);
     }
-}
+} 
