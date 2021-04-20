@@ -1,3 +1,9 @@
+/**
+@autor Tomasz Stępień, Jakub Gryzio
+@version 1.0
+@since 19-04-2021
+
+*/
 import java.util.Objects;
 
 public class Hospital extends Building{
