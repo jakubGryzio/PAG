@@ -88,4 +88,4 @@ public class Hospital extends Building{
     public int hashCode() {
         return Objects.hash(super.hashCode(), name, bedNumber, patientNumber);
     }
-}
+} 
