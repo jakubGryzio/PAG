@@ -49,22 +49,33 @@ public class Hospital extends Building{
     public void setPatientNumber(int patientNumber) {
         this.patientNumber = patientNumber;
     }
-
+    /***
+    * This method checks number of empty bed.
+    * @param args not used.
+    * @return subtract between bedNumber attribute and patientNumber attribute
+    */
     public int checkEmptyBedNumber() {
         if (this.bedNumber < this.patientNumber) {
             System.out.println("WARNING! ADD MORE BEDS!");
         }
         return this.bedNumber - this.patientNumber;
     }
-
+    /***
+    * This method add beds.
+    * @param int beds
+    */
     public void addBed(int beds) {
         this.bedNumber += beds;
     }
-
+    /***
+    * This method add new patient.
+    */
     public void addPatient() {
         this.patientNumber++;
     }
-
+    /***
+    * This method discharge patient.
+    */
     public void dischargePatient() {
         this.patientNumber--;
         if (this.patientNumber < 0) {
@@ -95,7 +106,10 @@ public class Hospital extends Building{
     public int hashCode() {
         return Objects.hash(super.hashCode(), name, bedNumber, patientNumber);
     }
-    
+    /***
+    * Test for the class.
+    * @param args not used.
+    */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Hospital hospital = new Hospital("concrete", 60.0, 100.0, 80.0, 2010, "Adam Niedzielski", false,
