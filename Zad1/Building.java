@@ -122,7 +122,6 @@ public class Building {
      * @return Nothing.
      *
      */
-    Scanner scanner = new Scanner(System.in);
 
     Building house = new Building();
     house.setMaterial("wood");
