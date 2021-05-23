@@ -22,6 +22,21 @@ public class Basket {
     }
 
     void push(Product product) throws ArrayIndexOutOfBoundsException {
-
+        if (first < products.length) {
+            products[first] = (ProductInBasket) product;
+        } else {
+            throw new ArrayIndexOutOfBoundsException();
+        }
     }
+
+    ProductInBasket pop() throws IndexOutOfBoundsException {
+        if (first <= 0) {
+            throw new IndexOutOfBoundsException();
+        }
+        ProductInBasket temp = products[first - 1];
+        first--;
+        return temp;
+    }
+
+//    void displayProducts() throws
 }
