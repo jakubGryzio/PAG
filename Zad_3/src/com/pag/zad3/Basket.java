@@ -23,7 +23,7 @@ public class Basket {
 
     void push(Product product) throws ArrayIndexOutOfBoundsException {
         if (first < products.length) {
-            products[first] = (ProductInBasket) product;
+            products[first] = (ProductInBasket)product;
         } else {
             throw new ArrayIndexOutOfBoundsException();
         }
