@@ -1,7 +1,11 @@
 package com.pag.zad3;
 
-public class ProductInBasket extends Produkt{
+public class ProductInBasket extends Product{
     private float amount;
+
+    public ProductInBasket(String name, float price) {
+        super(name, price);
+    }
 
     public ProductInBasket(float amount){
         this.amount = amount;
@@ -14,7 +18,5 @@ public class ProductInBasket extends Produkt{
     public void setAmount(float amount) {
         this.amount = amount;
     }
-
-
 
 }

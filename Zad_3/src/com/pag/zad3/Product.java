@@ -2,13 +2,16 @@ package com.pag.zad3;
 
 import java.util.Objects;
 
-public class Produkt {
+public class Product {
     private String name;
     private float price;
 
-    public Produkt(String name, float price) {
+    public Product(String name, float price) {
         this.name = name;
         this.price = price;
+    }
+
+    public Product() {
     }
 
     public String getName() {
@@ -31,8 +34,8 @@ public class Produkt {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Produkt produkt = (Produkt) o;
-        return Float.compare(produkt.price, price) == 0 && name.equals(produkt.name);
+        Product product = (Product) o;
+        return Float.compare(product.price, price) == 0 && name.equals(product.name);
     }
 
     @Override
@@ -42,7 +45,7 @@ public class Produkt {
 
     @Override
     public String toString() {
-        return "com.pag.zad3.Produkt{" + "name='" + name + '\'' + ", price=" + price + '}';
+        return "com.pag.zad3.Product{" + "name='" + name + '\'' + ", price=" + price + '}';
     }
 }
 

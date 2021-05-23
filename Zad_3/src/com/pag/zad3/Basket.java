@@ -1,11 +1,13 @@
 package com.pag.zad3;
 
+import java.util.Arrays;
+
 public class Basket {
-    ProductInBasket[] products;
+    Product[] products;
     int first;
 
     public Basket(int MaxSize) {
-        products = new ProductInBasket[MaxSize];
+        products = new Product[MaxSize];
         first = 0;
     }
 
@@ -23,20 +25,38 @@ public class Basket {
 
     void push(Product product) throws ArrayIndexOutOfBoundsException {
         if (first < products.length) {
-            products[first] = (ProductInBasket)product;
+            products[first] = product;
+            first++;
         } else {
             throw new ArrayIndexOutOfBoundsException();
         }
     }
 
-    ProductInBasket pop() throws IndexOutOfBoundsException {
+    Product pop() throws IndexOutOfBoundsException {
         if (first <= 0) {
             throw new IndexOutOfBoundsException();
         }
-        ProductInBasket temp = products[first - 1];
+        Product temp = products[first - 1];
         first--;
         return temp;
     }
 
-//    void displayProducts() throws
+    public void displayProducts() throws IndexOutOfBoundsException {
+        if (first == 0) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        int temp = first - 1;
+        do {
+            System.out.println(products[temp]);
+            temp--;
+        } while (temp > -1);
+    }
+
+    @Override
+    public String toString() {
+        return "Basket{" +
+                "products=" + Arrays.toString(products) +
+                '}';
+    }
 }
