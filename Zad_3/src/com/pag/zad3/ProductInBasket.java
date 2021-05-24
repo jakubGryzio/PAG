@@ -23,4 +23,12 @@ public class ProductInBasket extends Product{
     public float getProductPrice() {
         return super.price * this.amount;
     }
+
+    @Override
+    public String toString() {
+        return "{"+ "name='" + name + '\'' +
+                ", price=" + price +
+                ", amount=" + amount +
+                '}';
+    }
 }

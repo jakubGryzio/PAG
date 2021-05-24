@@ -63,7 +63,6 @@ public class Basket {
 
     @Override
     public String toString() {
-        return "Basket{" +
-                "products=" + Arrays.toString(products) + ", products sum= " + productsSum() + '}';
+        return "{" + "products: " + Arrays.toString(products) + ", products sum= " + productsSum() + '}';
     }
 }
