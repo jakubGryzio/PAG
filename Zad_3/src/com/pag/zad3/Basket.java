@@ -3,11 +3,11 @@ package com.pag.zad3;
 import java.util.Arrays;
 
 public class Basket {
-    Product[] products;
+    ProductInBasket[] products;
     int first;
 
     public Basket(int MaxSize) {
-        products = new Product[MaxSize];
+        products = new ProductInBasket[MaxSize];
         first = 0;
     }
 
@@ -23,7 +23,7 @@ public class Basket {
         return first;
     }
 
-    void push(Product product) throws ArrayIndexOutOfBoundsException {
+    void push(ProductInBasket product) throws ArrayIndexOutOfBoundsException {
         if (first < products.length) {
             products[first] = product;
             first++;
@@ -32,13 +32,21 @@ public class Basket {
         }
     }
 
-    Product pop() throws IndexOutOfBoundsException {
+    ProductInBasket pop() throws IndexOutOfBoundsException {
         if (first <= 0) {
             throw new IndexOutOfBoundsException();
         }
-        Product temp = products[first - 1];
+        ProductInBasket temp = products[first - 1];
         first--;
         return temp;
+    }
+
+    public float productsSum() {
+        float sum = 0;
+        for(int i = 0; i < products.length; i++) {
+            sum += products[i].getProductPrice();
+        }
+        return sum;
     }
 
     public void displayProducts() throws IndexOutOfBoundsException {
@@ -56,7 +64,6 @@ public class Basket {
     @Override
     public String toString() {
         return "Basket{" +
-                "products=" + Arrays.toString(products) +
-                '}';
+                "products=" + Arrays.toString(products) + ", products sum= " + productsSum() + '}';
     }
 }

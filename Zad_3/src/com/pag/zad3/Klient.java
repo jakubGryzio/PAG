@@ -8,7 +8,7 @@ public class Klient {
     public Klient(String id, String name, Basket basket) {
         this.id = id;
         this.name = name;
-        this.basket = basket;
+        Klient.basket = basket;
     }
 
     public String getId() {
@@ -23,7 +23,8 @@ public class Klient {
         this.id = id;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 
@@ -31,8 +32,8 @@ public class Klient {
     public String toString() {
         return "Klient{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' + basket +
-                '}';
+                ", name='" + name + '\'' + ", basket='" + basket + '\'' +
+                '}' + '\n';
     }
 }
 

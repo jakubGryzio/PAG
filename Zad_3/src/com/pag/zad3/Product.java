@@ -3,8 +3,8 @@ package com.pag.zad3;
 import java.util.Objects;
 
 public class Product {
-    private String name;
-    private float price;
+    public String name;
+    public float price;
 
     public Product(String name, float price) {
         this.name = name;
@@ -45,7 +45,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "com.pag.zad3.Product{" + "name='" + name + '\'' + ", price=" + price + '}';
+        return "Product{" + "name='" + name + '\'' + ", price=" + price + '}';
     }
 }
 

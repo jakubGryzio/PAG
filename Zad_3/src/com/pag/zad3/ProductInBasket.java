@@ -3,8 +3,9 @@ package com.pag.zad3;
 public class ProductInBasket extends Product{
     private float amount;
 
-    public ProductInBasket(String name, float price) {
-        super(name, price);
+    public ProductInBasket(Product product, float amount) {
+        super(product.name, product.price);
+        this.amount = amount;
     }
 
     public ProductInBasket(float amount){
@@ -19,4 +20,7 @@ public class ProductInBasket extends Product{
         this.amount = amount;
     }
 
+    public float getProductPrice() {
+        return super.price * this.amount;
+    }
 }
